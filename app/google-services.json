@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "847060844340",
+    "firebase_url": "https://dark-reborn.firebaseio.com",
+    "project_id": "dark-reborn",
+    "storage_bucket": "dark-reborn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847060844340:android:a113327e239f00c1186f61",
+        "android_client_info": {
+          "package_name": "com.dark.mode.night.darkmode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847060844340-r33imt5lu5eoiktkh82ms81lrpb4m1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoet-FB4mONwmSra_VBYXJuBNnzWn6554"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847060844340-r33imt5lu5eoiktkh82ms81lrpb4m1i1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

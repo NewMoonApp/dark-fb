@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/modes_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/day_mode_container"
+        style="@style/ModeItem"
+        android:clipChildren="false"
+        android:paddingEnd="0dp">
+
+        <ImageView
+            style="@style/ModeIcon"
+            app:srcCompat="@drawable/day_mode_icon" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            style="@style/ModeTitle"
+            android:includeFontPadding="false"
+            android:text="@string/day_mode"
+            app:typeface="@string/custom_font_regular" />
+
+        <RadioButton
+            android:id="@+id/day_mode_switch"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:theme="@style/MyRadioButton" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/night_mode_container"
+        style="@style/ModeItem"
+        android:clipChildren="false"
+        android:paddingEnd="0dp">
+
+        <ImageView
+            style="@style/ModeIcon"
+            app:srcCompat="@drawable/night_mode_icon" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            style="@style/ModeTitle"
+            android:includeFontPadding="false"
+            android:text="@string/night_mode"
+            app:typeface="@string/custom_font_regular" />
+
+        <RadioButton
+            android:id="@+id/night_mode_switch"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:theme="@style/MyRadioButton" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/auto_mode_container"
+        style="@style/ModeItem"
+        android:clipChildren="false"
+        android:paddingEnd="0dp">
+
+        <ImageView
+            style="@style/ModeIcon"
+            app:srcCompat="@drawable/auto_mode_icon" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            style="@style/ModeTitle"
+            android:includeFontPadding="false"
+            android:text="@string/auto_mode"
+            app:typeface="@string/custom_font_regular" />
+
+        <RadioButton
+            android:id="@+id/auto_mode_switch"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:theme="@style/MyRadioButton" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/timing_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/timing_mode_container"
+            style="@style/ModeItem"
+            android:clipChildren="false"
+            android:paddingEnd="0dp">
+
+            <ImageView
+                style="@style/ModeIcon"
+                app:srcCompat="@drawable/timing_mode_icon_main" />
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/timing_text"
+                style="@style/ModeTitle"
+                android:includeFontPadding="false"
+                android:text="@string/timing_mode"
+                app:typeface="@string/custom_font_regular" />
+
+            <ImageView
+                android:id="@+id/dark_mode_pro"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/timing_text"
+                android:src="@drawable/icon_timing_pro" />
+
+            <RadioButton
+                android:id="@+id/timing_mode_switch"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="32dp"
+                android:theme="@style/MyRadioButton" />
+        </RelativeLayout>
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:id="@+id/timing_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timing_mode_container"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="-8dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="22:00"
+            android:textColor="#568FFD"
+            android:textSize="24sp"
+            app:typeface="@string/custom_font_regular" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:id="@+id/timing_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timing_mode_container"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-8dp"
+            android:layout_toEndOf="@+id/timing_start_time"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="—"
+            android:textColor="@color/timing_line_color"
+            android:textSize="24dp"
+            app:typeface="@string/custom_font_regular" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:id="@+id/timing_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timing_mode_container"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-8dp"
+            android:layout_toEndOf="@+id/timing_line"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="+6:00"
+            android:textColor="#568FFD"
+            android:textSize="24sp"
+            app:typeface="@string/custom_font_regular" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timing_start_time"
+            android:layout_alignStart="@+id/timing_start_time"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/night_screen_on"
+            android:textAllCaps="true"
+            android:textColor="#A2AABA"
+            android:textSize="10sp"
+            app:typeface="@string/custom_font_regular" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timing_end_time"
+            android:layout_alignStart="@+id/timing_end_time"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/night_screen_off"
+            android:textAllCaps="true"
+            android:textColor="#A2AABA"
+            android:textSize="10sp"
+            app:typeface="@string/custom_font_regular" />
+    </RelativeLayout>
+
+</LinearLayout>

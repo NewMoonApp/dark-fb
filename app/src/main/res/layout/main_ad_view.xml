@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shadow_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.newmoon.common.view.RoundCornerContainer
+            android:id="@+id/banner_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:radiusX="25dp"
+            app:radiusY="25dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_ad" />
+
+            <com.newmoon.adengine.nativead.NmNativeAdIconView
+                android:id="@+id/banner_icon_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+        </com.newmoon.common.view.RoundCornerContainer>
+
+        <LinearLayout
+            android:id="@+id/main_ad_title_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/banner_icon"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/banner_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:textColor="@color/faq_text_color"
+                android:textSize="14sp"
+                app:typeface="@string/custom_font_medium"
+                tools:text="Find funny GIFshjhjhjhjhjhjjhjhjh" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icon_ad_preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_ad_preview" />
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:id="@+id/banner_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:textColor="@color/faq_content_color"
+                    android:textSize="12sp"
+                    app:typeface="@string/custom_font_regular"
+                    tools:text="memes &amp; watch vir..." />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:id="@+id/banner_action"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/banner_icon"
+            app:typeface="@string/custom_font_medium" />
+
+        <FrameLayout
+            android:id="@+id/ad_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

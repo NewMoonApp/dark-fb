@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SmartSeekBar">
+        <!-- line height-->
+        <attr name="ssb_lineHeight" format="dimension"/>
+        <!-- line start color-->
+        <attr name="ssb_normalLineColor" format="reference|color"/>
+        <!-- line stop color-->
+        <attr name="ssb_activeLineColor" format="reference|color"/>
+
+        <!-- cursor resource-->
+        <attr name="ssb_cursorColor" format="reference|color"/>
+        <!-- cursor width-->
+        <attr name="ssb_cursorSize" format="dimension"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="progressIndeterminate" format="boolean" />
+        <attr name="barColor" format="color" />
+        <attr name="rimColor" format="color" />
+        <attr name="rimWidth" format="dimension" />
+        <attr name="spinSpeed" format="float" />
+        <attr name="barSpinCycleTime" format="integer" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="fillRadius" format="boolean" />
+        <attr name="barWidth" format="dimension" />
+        <attr name="linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AdvancedPageIndicator">
+        <attr name="minRadius" format="dimension" />
+        <attr name="circleRadiusPageIndicator" format="dimension" />
+        <attr name="indicatorRadius" format="dimension" />
+        <attr name="circleColor" format="color" />
+        <attr name="indicatorColor" format="color" />
+        <attr name="circleSpacing" format="dimension" />
+        <attr name="circleVerticalPadding" format="dimension" />
+        <attr name="circleHorizontalPadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="wheelview">
+        <attr name="gravity">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+        </attr>
+        <attr name="textSize"/>
+        <attr name="textColorOut" format="color" />
+        <attr name="textColorCenter" format="color" />
+        <attr name="dividerColor" format="color" />
+    </declare-styleable>
+</resources>

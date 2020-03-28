@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow_bg">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/card_wallpaper_icon" />
+
+    <com.newmoon.common.view.TypefacedTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/icon"
+        android:layout_alignBottom="@+id/icon"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/icon"
+        android:gravity="center_vertical"
+        android:text="@string/navigation_wallpaper"
+        android:textColor="@color/information_flow_title_color"
+        android:textSize="14sp"
+        app:typeface="@string/custom_font_regular" />
+
+    <ImageView
+        android:id="@+id/wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon"
+        android:layout_marginStart="-8.5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="-8.5dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/microsoft_auncher" />
+
+    <com.newmoon.common.view.TypefacedTextView
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wallpaper"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:textColor="#5685FD"
+        android:textSize="14sp"
+        app:textAllCaps="true"
+        app:typeface="@string/custom_font_regular"
+        android:text="@string/view_more" />
+
+    <com.newmoon.common.view.TypefacedTextView
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wallpaper"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:textColor="#5685FD"
+        android:textSize="14sp"
+        app:textAllCaps="true"
+        app:typeface="@string/custom_font_regular"
+        android:text="@string/share" />
+</RelativeLayout>
+

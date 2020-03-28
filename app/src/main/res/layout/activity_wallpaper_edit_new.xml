@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <ImageView
+        android:id="@+id/wallpaper_view_return"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:padding="4dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="38dp"
+        android:src="@drawable/wallpaper_back_svg"/>
+
+    <com.newmoon.common.view.TypefacedTextView
+        android:id="@+id/wallpaper_edit_reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36.3dp"
+        android:gravity="center"
+        android:paddingBottom="5.5dp"
+        android:paddingEnd="9.5dp"
+        android:paddingLeft="9.5dp"
+        android:paddingRight="9.5dp"
+        android:paddingStart="9.5dp"
+        android:paddingTop="5.5dp"
+        android:text="@string/online_wallpaper_edit_reset_btn"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:typeface="@string/custom_font_regular"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_scroll_type_controller"
+        android:layout_below="@+id/wallpaper_view_return"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/wallpaper_edit_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="matrix" />
+
+        <com.newmoon.dark.wallpaper.crop.CropOverlayView
+            android:id="@+id/wallpaper_overlay_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+
+    <com.newmoon.common.view.TypefacedTextView
+        android:id="@+id/wallpaper_edit_apply_button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:text="@string/online_wallpaper_apply_btn"
+        app:typeface="@string/custom_font_medium" />
+
+    <LinearLayout
+        android:id="@+id/layout_scroll_type_controller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wallpaper_edit_apply_button"
+        android:layout_marginBottom="64dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/wallpaper_edit_fixed"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/wallpaper_fixed"
+            android:gravity="center"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp"
+            android:text="@string/wallpaper_edit_fixed"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/wallpaper_edit_scroll"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/wallpaper_scrollable"
+            android:gravity="center"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp"
+            android:text="@string/wallpaper_edit_scrollable"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="primary_background">#20202A</color>
+    <color name="home_page_background">#20202A</color>
+
+    <color name="menu_text_color">#FFFFFF</color>
+
+    <color name="supported_apps_color">#9BA1AC</color>
+
+    <color name="supported_apps_item_name_color">#FFFFFF</color>
+
+    <color name="color_control_normal">#636B7B</color>
+    <color name="color_control_activated">#568FFD</color>
+
+    <color name="faq_bg">#20202a</color>
+    <color name="faq_text_color">#fff</color>
+    <color name="faq_description_color">#a2aaba</color>
+    <color name="faq_content_color">#a2aaba</color>
+
+    <color name="navigation_above_line_color">#636B7B</color>
+    <color name="navigation_bg_color">#363645</color>
+    <color name="night_screen_intensity_seekbar_line_normal_color">#051535</color>
+
+    <color name="night_screen_color_temperature_item_name_color">#FFFFFF</color>
+
+    <color name="navigation_menu_line_color">#636B7B</color>
+
+    <color name="pickerview_wheelview_textcolor_out">#A2AABA</color>
+    <color name="pickerview_wheelview_textcolor_center">#FFFFFF</color>
+    <color name="pickerview_wheelview_textcolor_divider">#636B7B</color>
+
+    <color name="timing_line_color">#A2AABA</color>
+    <color name="time_picker_bg_color">#363645</color>
+    <color name="time_picker_cancel_text_color">#D8DDE7</color>
+    <color name="time_picker_cancel_bg_color">#636B7B</color>
+    <color name="time_picker_set_text_color">#FFFFFF</color>
+    <color name="time_picker_set_bg_color">#338CF5</color>
+
+    <color name="information_flow_title_color">#FFFFFF</color>
+    <color name="information_flow_content_color">#9BA1AC</color>
+</resources>

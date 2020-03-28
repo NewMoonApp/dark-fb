@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.newmoon.dark.nightscreen.NightScreenContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/night_screen_content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/top_container"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="60dp">
+
+        <RelativeLayout
+            android:id="@+id/night_screen_settings_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadow_bg">
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/night_screen_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/night_screen_off"
+                android:textAllCaps="true"
+                android:textColor="@color/menu_text_color"
+                android:textSize="20sp"
+                app:typeface="@string/custom_font_medium" />
+
+            <ImageView
+                android:id="@+id/night_screen_help"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="72dp"
+                android:layout_marginTop="15dp"
+                android:padding="4dp"
+                app:srcCompat="@drawable/night_screen_help" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/night_screen_status_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/night_screen_status_text"
+                android:layout_alignBottom="@+id/night_screen_status_text"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dp"
+                android:theme="@style/SwitchTheme" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/night_screen_color_temperatures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/night_screen_status_text"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="6dp"
+                android:overScrollMode="never" />
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/night_screen_intensity_percent_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/night_screen_color_temperatures"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="16dp"
+                android:includeFontPadding="false"
+                android:text="%"
+                android:textColor="@color/night_screen_intensity_text_color"
+                android:textSize="16sp"
+                app:typeface="@string/custom_font_regular" />
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/night_screen_intensity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/night_screen_intensity_percent_sign"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="-8dp"
+                android:layout_toStartOf="@+id/night_screen_intensity_percent_sign"
+                android:includeFontPadding="false"
+                android:text="30"
+                android:textColor="@color/night_screen_intensity_text_color"
+                android:textSize="36sp"
+                app:typeface="@string/custom_font_light" />
+
+            <ImageView
+                android:id="@+id/night_screen_intensity_img"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignBottom="@+id/night_screen_intensity_percent_sign"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/night_screen_intensity_icon" />
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/night_screen_intensity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/night_screen_intensity_percent_sign"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toEndOf="@+id/night_screen_intensity_img"
+                android:includeFontPadding="false"
+                android:text="@string/night_screen_intensity"
+                android:textColor="@color/menu_text_color"
+                android:textSize="16sp"
+                app:typeface="@string/custom_font_medium" />
+
+            <com.newmoon.dark.view.SmartSeekBar
+                android:id="@+id/night_screen_intensity_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@+id/night_screen_intensity_percent_sign"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:ssb_activeLineColor="@color/night_screen_intensity_seekbar_line_active_color"
+                app:ssb_cursorColor="@color/night_screen_intensity_seekbar_cursor_color"
+                app:ssb_cursorSize="16dp"
+                app:ssb_lineHeight="2dp"
+                app:ssb_normalLineColor="@color/night_screen_intensity_seekbar_line_normal_color" />
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/night_screen_screenDim_percent_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/night_screen_intensity_seekbar"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:includeFontPadding="false"
+                android:text="%"
+                android:textColor="@color/night_screen_intensity_text_color"
+                android:textSize="16sp"
+                app:typeface="@string/custom_font_regular" />
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/night_screen_screenDim_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/night_screen_screenDim_percent_sign"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="-8dp"
+                android:layout_toStartOf="@+id/night_screen_screenDim_percent_sign"
+                android:includeFontPadding="false"
+                android:text="0"
+                android:textColor="@color/night_screen_intensity_text_color"
+                android:textSize="36sp"
+                app:typeface="@string/custom_font_light" />
+
+            <ImageView
+                android:id="@+id/night_screen_screenDim_img"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignBottom="@+id/night_screen_screenDim_percent_sign"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/night_screen_screendim_icon" />
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:id="@+id/night_screen_screenDim_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/night_screen_screenDim_percent_sign"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toEndOf="@+id/night_screen_intensity_img"
+                android:includeFontPadding="false"
+                android:text="@string/night_screen_screenDim"
+                android:textColor="@color/menu_text_color"
+                android:textSize="16sp"
+                app:typeface="@string/custom_font_medium" />
+
+            <com.newmoon.dark.view.SmartSeekBar
+                android:id="@+id/night_screen_screenDim_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@+id/night_screen_screenDim_percent_sign"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:ssb_activeLineColor="@color/night_screen_intensity_seekbar_line_active_color"
+                app:ssb_cursorColor="@color/night_screen_intensity_seekbar_cursor_color"
+                app:ssb_cursorSize="16dp"
+                app:ssb_lineHeight="2dp"
+                app:ssb_normalLineColor="@color/night_screen_intensity_seekbar_line_normal_color" />
+
+
+            <RelativeLayout
+                android:id="@+id/night_screen_timing_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/night_screen_screenDim_seekbar"
+                android:layout_marginTop="-4dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/night_screen_timing_mode_container"
+                    style="@style/ModeItem"
+                    android:clipChildren="false"
+                    android:paddingEnd="0dp">
+
+                    <ImageView
+                        android:id="@+id/night_screen_timing_icon"
+                        style="@style/ModeIcon"
+                        app:srcCompat="@drawable/timing_mode_icon_nightscreen" />
+
+                    <com.newmoon.common.view.TypefacedTextView
+                        android:id="@+id/night_screen_timing_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/night_screen_timing_icon"
+                        android:includeFontPadding="false"
+                        android:text="@string/timing_mode"
+                        android:textColor="@color/menu_text_color"
+                        android:textSize="16sp"
+                        app:typeface="@string/custom_font_medium" />
+
+                    <ImageView
+                        android:id="@+id/night_screen_pro"
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/night_screen_timing_text"
+                        android:src="@drawable/icon_timing_pro" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/night_screen_timing_switch"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:theme="@style/SwitchTheme" />
+                </RelativeLayout>
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:id="@+id/night_screen_timing_start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/night_screen_timing_mode_container"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="-8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="22:00"
+                    android:textColor="#568FFD"
+                    android:textSize="24sp"
+                    app:typeface="@string/custom_font_regular" />
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:id="@+id/night_screen_timing_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/night_screen_timing_mode_container"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="-8dp"
+                    android:layout_toEndOf="@+id/night_screen_timing_start_time"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="—"
+                    android:textColor="@color/timing_line_color"
+                    android:textSize="24dp"
+                    app:typeface="@string/custom_font_regular" />
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:id="@+id/night_screen_timing_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/night_screen_timing_mode_container"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="-8dp"
+                    android:layout_toEndOf="@+id/night_screen_timing_line"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="+6:00"
+                    android:textColor="#568FFD"
+                    android:textSize="24sp"
+                    app:typeface="@string/custom_font_regular" />
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/night_screen_timing_start_time"
+                    android:layout_alignStart="@+id/night_screen_timing_start_time"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/night_screen_on"
+                    android:textAllCaps="true"
+                    android:textColor="#A2AABA"
+                    android:textSize="10sp"
+                    app:typeface="@string/custom_font_regular" />
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/night_screen_timing_end_time"
+                    android:layout_alignStart="@+id/night_screen_timing_end_time"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/night_screen_off"
+                    android:textAllCaps="true"
+                    android:textColor="#A2AABA"
+                    android:textSize="10sp"
+                    app:typeface="@string/custom_font_regular" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/adViewNightScreenContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/night_screen_settings_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-16dp"
+            android:background="@drawable/shadow_bg"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</com.newmoon.dark.nightscreen.NightScreenContainer>

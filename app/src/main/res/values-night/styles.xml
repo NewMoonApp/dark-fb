@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>//无标题
+        <item name="android:windowActionBar">false</item>//无ActionBar
+        <item name="android:windowFullscreen">false</item>//全屏即无通知栏
+        <item name="android:windowContentOverlay">@null</item>//是否有遮盖
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.DayNight">
+        <item name="colorControlNormal">@color/color_control_normal</item>
+        <item name="colorControlActivated">@color/color_control_activated</item>
+    </style>
+
+    <style name="SwitchTheme" parent="Theme.AppCompat.DayNight">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">#568FFD</item>
+        <!-- Inactive thumb color switch关闭时的拇指按钮的颜色 -->
+        <item name="colorSwitchThumbNormal">#FAFAFA</item>
+        <!-- inactive track color (30% transparency) switch关闭时的轨迹的颜色  %30这个颜色-->
+        <item name="android:colorForeground">#C2CADA</item>
+    </style>
+</resources>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#20202a"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        app:layout_constraintBottom_toTopOf="@+id/price_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_container">
+
+        <FrameLayout
+            android:id="@+id/welcome_guide_lottie_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_guide_viewpager_title"
+            app:layout_constraintDimensionRatio="245:176"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.68">
+
+        </FrameLayout>
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:id="@+id/welcome_guide_viewpager_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:textColor="#282a31"
+            android:textSize="24sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/welcome_guide_viewpager_body"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_guide_lottie_container"
+            app:layout_constraintWidth_percent="0.8222"
+            app:typeface="@string/custom_font_semibold" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:id="@+id/welcome_guide_viewpager_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="2dp"
+            android:lines="2"
+            android:textColor="#494b4f"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_guide_viewpager_indicator"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_guide_viewpager_title"
+            app:layout_constraintWidth_percent="0.8222"
+            app:typeface="@string/custom_font_regular" />
+
+        <com.newmoon.dark.view.AdvancedPageIndicator
+            android:id="@+id/welcome_guide_viewpager_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:circleColor="#636b7b"
+            app:circleRadiusPageIndicator="3dp"
+            app:circleSpacing="9dp"
+            app:indicatorColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_guide_viewpager_body" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.newmoon.dark.view.ViewPagerFixed
+        android:id="@+id/welcome_guide_viewpager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/price_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.newmoon.common.view.TypefacedTextView
+        android:id="@+id/welcome_start_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/purchase"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="296:48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.822"
+        app:typeface="@string/custom_font_medium" />
+
+
+    <com.newmoon.common.view.RoundCornerContainer
+        android:id="@+id/price_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/welcome_start_button"
+        app:layout_constraintDimensionRatio="296:48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.822"
+        app:radiusX="8dp"
+        app:radiusY="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="206"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/dark_pro_tick" />
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:id="@+id/price_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="#fff"
+                    android:textSize="22dp"
+                    app:typeface="@string/custom_font_medium" />
+
+                <com.newmoon.common.view.TypefacedTextView
+                    android:id="@+id/price_text_view_double"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#A2AABA"
+                    android:textSize="16dp"
+                    app:typeface="@string/custom_font_medium" />
+            </LinearLayout>
+
+            <com.newmoon.common.view.TypefacedTextView
+                android:layout_width="0dp"
+                android:id="@+id/off"
+                android:visibility="invisible"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_weight="90"
+                android:background="#FA8553"
+                android:gravity="center"
+                android:text="50%OFF"
+                android:textColor="#fff"
+                android:textSize="16dp"
+                app:typeface="@string/custom_font_medium" />
+        </LinearLayout>
+    </com.newmoon.common.view.RoundCornerContainer>
+
+    <LinearLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="center"
+            android:src="@drawable/arrow_back" />
+
+        <com.newmoon.common.view.TypefacedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:text="@string/dark_pro"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            app:typeface="@string/custom_font_regular" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

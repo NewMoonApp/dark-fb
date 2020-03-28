@@ -1,0 +1,127 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.bugsnag.android.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.getkeepsafe.dexcount'
+apply plugin: 'com.gladed.androidgitversion'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    def compilerArgs = ["-Xuse-experimental=kotlin.Experimental" /*, "-XXLanguage:+InlineClasses"*/]
+    buildTypes {
+        debug {
+            resValue "string", "frost_name", "Frost Debug"
+            resValue "string", "frost_web", "Frost Web Debug"
+
+            ext.enableBugsnag = false
+
+            kotlinOptions.freeCompilerArgs += compilerArgs
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "frost_name", "Frost"
+            resValue "string", "frost_web", "Frost Web"
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.assets.srcDirs += ['src/web/assets']
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.core:core-ktx:1.2.0'
+
+    api 'androidx.exifinterface:exifinterface:1.0.0'
+
+    api kau.Dependencies.kotlin
+
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('core', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('core-ui', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('adapter', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('fastadapter', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('about', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('colorpicker', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('mediapicker', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('kpref-activity', KAU)
+    //noinspection GradleDependency
+    api kau.Dependencies.kau('searchview', KAU)
+
+    api "androidx.core:core-ktx:${Versions.ktx}"
+
+    api "androidx.biometric:biometric:${Versions.andxBiometric}"
+
+    api "org.koin:koin-android:${Versions.koin}"
+
+//    androidTestImplementation "io.mockk:mockk:${Versions.mockk}"
+
+    api kau.Dependencies.coroutines
+
+    api "org.apache.commons:commons-text:${Versions.apacheCommonsText}"
+
+    api "com.devbrackets.android:exomedia:${Versions.exoMedia}"
+
+    api kau.Dependencies.fastAdapter("extensions")
+
+    //noinspection GradleDependency
+    api kau.Dependencies.glide
+    //noinspection GradleDependency
+    kapt kau.Dependencies.glideKapt
+
+    api "com.fasterxml.jackson.core:jackson-databind:${Versions.jackson}"
+
+    //noinspection GradleDependency
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${Versions.leakCanary}"
+    //noinspection GradleDependency
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
+//    testImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${Versions.leakCanary}"
+
+    //Icons
+    api kau.Dependencies.iconicsMaterial
+    api kau.Dependencies.iconicsCommunity
+
+    api "org.jsoup:jsoup:${Versions.jsoup}"
+
+    api "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
+    api "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
+
+    api "co.zsmb:materialdrawer-kt:${Versions.materialDrawerKt}"
+
+    api kau.Dependencies.bugsnag
+
+    api "com.davemorrissey.labs:subsampling-scale-image-view:${Versions.scaleImageView}"
+
+    api "androidx.room:room-ktx:${Versions.room}"
+    api "androidx.room:room-runtime:${Versions.room}"
+    kapt "androidx.room:room-compiler:${Versions.room}"
+}
